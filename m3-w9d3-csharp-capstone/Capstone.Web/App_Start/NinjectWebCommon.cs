@@ -62,6 +62,8 @@ namespace Capstone.Web.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IParkWeatherDal>().To<ParkWeatherSqlDal>().WithConstructorArgument("connectionString", ConfigurationManager.ConnectionStrings["ParkWeatherDb"].ConnectionString);
+            kernel.Bind<ISurveyDal>().To<SurveySqlDal>().WithConstructorArgument("connectionString", ConfigurationManager.ConnectionStrings["ParkWeatherDb"].ConnectionString);
+            kernel.Bind<IParkDal>().To<ParkSqlDal>().WithConstructorArgument("connectionString", ConfigurationManager.ConnectionStrings["ParkWeatherDb"].ConnectionString);
         }        
     }
 }
