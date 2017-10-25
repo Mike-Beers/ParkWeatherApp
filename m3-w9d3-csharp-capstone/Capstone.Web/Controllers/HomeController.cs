@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Capstone.Web.Models;
+using System.Configuration;
 
 namespace Capstone.Web.Controllers
 {
@@ -14,15 +16,36 @@ namespace Capstone.Web.Controllers
         private readonly ISurveyDal surveyDal;
         private readonly IParkDal parkDal;
 
+
         public HomeController(IParkWeatherDal weatherDal, ISurveyDal surveyDal, IParkDal parkDal)
         {
             this.weatherDal = weatherDal;
             this.surveyDal = surveyDal;
-            this.parkDal = parkDal;
+            this.parkDal = new ParkSqlDal(ConfigurationManager.ConnectionStrings["ParkWeatherDb"].ConnectionString);
         }
+
+        
 
         // GET: Home
         public ActionResult Index()
+        {
+            List<Park> parks = parkDal.GetAllParks();
+            return View(parks);
+        }
+        public ActionResult Detail(string id)
+        {
+            return View();
+        }
+        public ActionResult Survey()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Survey(Survey survey)
+        {
+            return RedirectToAction("SurveyConfirmation");
+        }
+        public ActionResult SurveyConfirmation()
         {
             return View();
         }
