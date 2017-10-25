@@ -1,0 +1,22 @@
+﻿body {
+}
+parks{
+    text-align:center;
+}
+
+.parks p{
+    width: 80%;
+    margin: 25px;
+    text-align: left;
+}
+.parks img { 
+    width: 250px;
+    height: auto;
+
+}
+.park {
+    vertical-align: top;
+    width: 80%;
+    margin: 0 auto;
+}
+

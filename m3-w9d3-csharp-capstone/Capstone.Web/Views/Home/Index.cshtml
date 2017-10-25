@@ -1,4 +1,5 @@
-﻿@model Capstone.Web.Models.Park
+﻿@using Capstone.Web.Models
+@model List<Park>
 
 @{
     ViewBag.Title = "Home";
@@ -6,4 +7,15 @@
 
 <h2>Home</h2>
 
+@{ 
 
+    foreach(Park p in Model)
+    {<grid class="park" style="padding: 10px;display:inline-block;vertical-align:top;max-width:30%; text-align:center">
+        
+        <a href="@Url.Action("Detail","Home", new { id = p.ParkCode })"><img style="width:200px;height:auto;border-width:10px" src="~/Content/img/parks/@(p.ParkCode.ToLower()+".jpg")"/></a>
+        <p style="width:200px">@p.ParkDescription</p>
+    </grid>
+    }
+   
+}
+    
