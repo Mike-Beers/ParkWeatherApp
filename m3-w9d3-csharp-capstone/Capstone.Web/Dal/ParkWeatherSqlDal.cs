@@ -10,8 +10,10 @@ namespace Capstone.Web.Dal
 {
     public class ParkWeatherSqlDal : IParkWeatherDal
     {
+
         private readonly string connectionString;
         private const string getWeatherByCodeSql = "SELECT * FROM weather WHERE parkCode = '@parkCode'";
+
 
         public ParkWeatherSqlDal(string connectionString)
         {

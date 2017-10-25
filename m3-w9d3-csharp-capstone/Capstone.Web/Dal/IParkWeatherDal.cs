@@ -9,7 +9,9 @@ namespace Capstone.Web.Dal
 {
     public interface IParkWeatherDal
     {
+
         List<Weather> GetWeatherByCode(string parkCode);
         //int TestMethod();
+
     }
 }
