@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 using Capstone.Web.Models;
 
 namespace Capstone.Web.Dal
 {
-    public interface IParkWeatherDal
+    public interface IParkDal
     {
-
+        List<Park> GetAllParks();
+        Park GetParkByCode(string code);
     }
 }

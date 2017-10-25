@@ -3,7 +3,9 @@ namespace Capstone.Web.Dal
 {
     public class ParkWeatherSqlDal : IParkWeatherDal
     {
-       private readonly string connectionString;
+        
+
+        private readonly string connectionString;
 
         public ParkWeatherSqlDal(string connectionString)
         {
