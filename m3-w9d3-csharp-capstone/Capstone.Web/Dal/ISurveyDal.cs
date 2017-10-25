@@ -7,11 +7,9 @@ using Capstone.Web.Models;
 
 namespace Capstone.Web.Dal
 {
-    public interface IParkWeatherDal
+    public interface ISurveyDal
     {
-
-        List<Weather> GetWeatherByCode(string parkCode);
-        //int TestMethod();
-
+        bool InsertSurvey(Survey submittedSurvey);
+        string ReturnMostPopularPark();
     }
 }
