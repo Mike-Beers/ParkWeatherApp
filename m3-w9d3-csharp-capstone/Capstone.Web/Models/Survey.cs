@@ -12,8 +12,8 @@ namespace Capstone.Web.Models
         [Required(ErrorMessage = "Please indicate your favorite park.")]
         public string ParkCode { get; set; }
 
-        [Required]
-        [DataType(DataType.EmailAddress, ErrorMessage = "Please enter a valid email.")]
+        [Required(ErrorMessage = "Please enter your email.")]
+        [EmailAddress(ErrorMessage = "Please enter a valid email.")]
         public string EmailAddress { get; set; }
 
         [Required(ErrorMessage = "Please indicate your state of residence.")]
@@ -21,8 +21,6 @@ namespace Capstone.Web.Models
 
         [Required(ErrorMessage = "Please indicate your activity level.")]
         public string ActivityLevel { get; set; }
-
-        public List<SelectListItem> ParkNames;
 
         public static List<SelectListItem> activityLevelList { get; } = new List<SelectListItem>
         {
