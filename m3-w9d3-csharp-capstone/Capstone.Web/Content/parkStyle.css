@@ -38,6 +38,9 @@ nav {
 /*vertical-align:top;max-width:30%; text-align:center*/
 .parkHomeBanner{
     text-align: center;
+    color: darkgreen;
+    
+    position:relative;
 }
 
 
@@ -58,6 +61,12 @@ nav {
         border-width: 10px;
         text-align: center;
     }
+.parkHome a{
+    text-decoration: none;
+    color: darkgreen;
+    font-weight: bolder;
+    font-size: x-large;
+}
 
 /* Survey Form */
 .form-input-field {
