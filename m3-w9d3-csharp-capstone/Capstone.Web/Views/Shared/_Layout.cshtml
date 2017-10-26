@@ -2,13 +2,29 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/parkStyle.css" />
 </head>
+
 <body>
-    <div> 
+    <nav>
+        <a href=@Url.Action("Index", "Home")>
+            <img class="logo" src="~/Content/img/logo.png" />
+        </a>
+        <div class="nav-link">
+            <a href=@Url.Action("Survey", "Home")>Take Daily Survey</a>
+        </div>
+    </nav>
+
+    <section class="main-content">
         @RenderBody()
-    </div>
+    </section>
+    <footer>
+        
+    </footer>
 </body>
+
 </html>

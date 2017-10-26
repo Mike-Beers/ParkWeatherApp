@@ -1,8 +1,31 @@
-﻿@model Capstone.Web.Models.Survey
+﻿@using Capstone.Web.Models;
+@model Survey
 
 @{
     ViewBag.Title = "Survey";
 }
 
-<h2>Survey</h2>
+<h2>Daily Survey</h2>
+
+@using (Html.BeginForm("Survey", "Home", FormMethod.Post))
+{
+    <div class="form-input-field">
+        @*@Html.Label("ParkCode", "Favorite National Park")
+        @Html.DropDownListFor(m => m.ParkCode, Survey.nationalParks)*@
+    </div>
+    <div class="form-input-field">
+        @Html.Label("EmailAddress", "Email")
+        @Html.TextBoxFor(m => m.EmailAddress)
+    </div>
+    <div class="form-input-field">
+        @Html.Label("State", "State of Residence")
+        @Html.DropDownListFor(m => m.State, Survey.states)
+    </div>
+    <div class="form-input-field">
+        @Html.Label("ActivityLevel", "Activity Level")
+        @Html.DropDownListFor(m => m.ActivityLevel, Survey.activityLevelList)
+    </div>
+    <button>Submit Survey</button>
+
+}
 

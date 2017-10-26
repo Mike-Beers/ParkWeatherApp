@@ -24,8 +24,6 @@ namespace Capstone.Web.Controllers
             this.parkDal = new ParkSqlDal(ConfigurationManager.ConnectionStrings["ParkWeatherDb"].ConnectionString);
         }
 
-        
-
         // GET: Home
         public ActionResult Index()
         {
@@ -36,10 +34,14 @@ namespace Capstone.Web.Controllers
         {
             return View();
         }
+
+        // GET: Home/Survey
         public ActionResult Survey()
         {
             return View();
         }
+
+        // POST: Home/Survey
         [HttpPost]
         public ActionResult Survey(Survey survey)
         {
