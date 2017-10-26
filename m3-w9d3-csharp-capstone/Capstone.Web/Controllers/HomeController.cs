@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Capstone.Web.Models;
 using System.Configuration;
 
+
 namespace Capstone.Web.Controllers
 {
     public class HomeController : Controller
@@ -15,7 +16,6 @@ namespace Capstone.Web.Controllers
         private readonly IParkWeatherDal weatherDal;
         private readonly ISurveyDal surveyDal;
         private readonly IParkDal parkDal;
-
 
         public HomeController(IParkWeatherDal weatherDal, ISurveyDal surveyDal, IParkDal parkDal)
         {
