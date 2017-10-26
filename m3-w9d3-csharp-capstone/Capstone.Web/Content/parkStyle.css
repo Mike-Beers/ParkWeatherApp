@@ -128,9 +128,6 @@ div.forecastContainer > div:nth-of-type(odd) {
     height: 130px;
     width: auto;
 }
-/*.highTemp{
-    display: inline;
-}*/
 .lowTemp {
     display: inline;
 }
@@ -149,5 +146,5 @@ div.forecastContainer > div:nth-of-type(odd) {
 }
 .parkInfoTableHeader{
     position: relative;
-    left: 50px;
+    left: 30px;
 }
