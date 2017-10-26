@@ -21,7 +21,7 @@ namespace Capstone.Web.Controllers
         {
             this.weatherDal = weatherDal;
             this.surveyDal = surveyDal;
-            this.parkDal = parkDal;
+            this.parkDal = new ParkSqlDal(ConfigurationManager.ConnectionStrings["ParkWeatherDb"].ConnectionString);
         }
 
         // GET: Home

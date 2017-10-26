@@ -35,29 +35,31 @@ nav {
         }
 
 /* Home Page */
-parks {
+/*vertical-align:top;max-width:30%; text-align:center*/
+.parkHomeBanner{
     text-align: center;
 }
 
-.parks p {
-    width: 80%;
-    margin: 25px;
-    text-align: left;
-}
 
-.parks img {
-    width: 250px;
-    height: auto;
-}
-
-.park {
+.parkHome{
+    margin: 10px;
+    border-radius: 5px;
+    border: 2px solid black;
+    background-color: whitesmoke;
+    padding: 10px;
+    display: inline-block;
     vertical-align: top;
-    width: 80%;
-    margin: 0 auto;
+    max-width: 30%;
+    text-align: center;
 }
+.parkHome #parkImg {
+        width: 200px;
+        height: auto;
+        border-width: 10px;
+        text-align: center;
+    }
 
 /* Survey Form */
-
 .form-input-field {
     margin: 20px 0px;
 }
