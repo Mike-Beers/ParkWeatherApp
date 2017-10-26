@@ -21,7 +21,7 @@ namespace Capstone.Web.Controllers
         {
             this.weatherDal = weatherDal;
             this.surveyDal = surveyDal;
-            this.parkDal = parkDal;
+            this.parkDal = new ParkSqlDal(ConfigurationManager.ConnectionStrings["ParkWeatherDb"].ConnectionString);
         }
 
         // GET: Home
@@ -32,7 +32,9 @@ namespace Capstone.Web.Controllers
         }
         public ActionResult Detail(string id)
         {
-            return View();
+            Park model = parkDal.GetParkByCode(id);
+            model.Weather = weatherDal.GetWeatherByCode(id);
+            return View(model);
         }
 
         // GET: Home/Survey
@@ -69,7 +71,8 @@ namespace Capstone.Web.Controllers
 
         public ActionResult SurveyConfirmation()
         {
-            return View();
+            Park model = parkDal.GetParkByCode(surveyDal.ReturnMostPopularPark());
+            return View(model);
         }
     }
 }

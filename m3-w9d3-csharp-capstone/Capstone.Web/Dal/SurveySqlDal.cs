@@ -18,7 +18,6 @@ namespace Capstone.Web.Dal
         {
             this.connectionString = connectionString;
         }
-
         // Inserts a completed survey into the survey_results table.
         public bool InsertSurvey(Survey submittedSurvey)
         {

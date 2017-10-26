@@ -1,0 +1,41 @@
+﻿body {
+}
+
+/*Individual Page Styles*/
+
+/*Detail Styles*/
+
+.detailContainer{
+    text-align:center;
+}
+.parkInfoTable{
+    display:inline-block;
+    float:left;
+}
+.campingInfoTable{
+    display:inline-block;
+}
+.forecastContainer{
+
+}
+div.forecastContainer > div:nth-of-type(odd){
+    background-color: lightgray;
+}
+.weatherLoopDiv{
+    display:inline-block;
+    font-size: smaller;
+    height: 300px;
+    width: 10%;
+}
+.weatherImage{
+    height: 50px;
+}
+/*.highTemp{
+    display: inline;
+}*/
+.lowTemp{
+    display: inline;
+}
+.tempButton{
+    display:block;
+}

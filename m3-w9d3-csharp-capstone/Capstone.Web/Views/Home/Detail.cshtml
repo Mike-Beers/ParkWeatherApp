@@ -1,8 +1,95 @@
 ﻿@model Capstone.Web.Models.Park
-
+@using Capstone.Web.Models;
 @{
     ViewBag.Title = "Detail";
 }
 
-<h2>Detail</h2>
 
+<div class="detailContainer">
+    <h2 class="headingDetail">@Model.ParkName, @Model.State</h2>
+    <img src="~/Content/img/parks/@(Model.ParkCode.ToLower() + ".jpg")" class="parkImgDetail">
+    <div class="quoteDiv">
+        <p class="inspirationalQuote"><em>@Model.InspirationalQuote</em></p>
+        <p class="inspirationalQuoteSource"><em>- @Model.InspirationalQuoteSource</em></p>
+    </div>
+    <div class="descriptionDiv">
+        <p>@Model.ParkDescription</p>
+    </div>
+    <div class="tablesDetail">
+        <table class="parkInfoTable">
+            <tr>
+                <th>Park Info</th>
+            </tr>
+            <tr>
+                <td><strong>Size:</strong></td>
+                <td>@Model.Acreage.ToString("N0") Acres</td>
+            </tr>
+            <tr>
+                <td><strong>Elevation:</strong></td>
+                <td>@Model.ElevationInFeet.ToString("N0") ft.</td>
+            </tr>
+            <tr>
+                <td><strong>Founded In: </strong></td>
+                <td>@Model.YearFounded</td>
+            </tr>
+            <tr>
+                <td><strong>Park Code:</strong></td>
+                <td>@Model.ParkCode</td>
+            </tr>
+        </table>
+
+        <table class="campingInfoTable">
+            <tr>
+                <th>Camping Info</th>
+            </tr>
+            <tr>
+                <td><strong>Number of Campsites:</strong></td>
+                <td>@Model.NumberOfCampsites.ToString("N0")</td>
+            </tr>
+            <tr>
+                <td><strong>Annual Visitor Count:</strong></td>
+                <td>@Model.AnnualVisitorCount.ToString("N0")</td>
+            </tr>
+            <tr>
+                <td><strong>Entry Fee:</strong></td>
+                <td>@Model.EntryFee.ToString("C")</td>
+            </tr>
+            <tr>
+                <td><strong>Climate:</strong> </td>
+                <td>@Model.Climate</td>
+            </tr>
+            <tr>
+                <td><strong>Miles of Trail:</strong></td>
+                <td>@Model.MilesOfTrail.ToString("N0")</td>
+            </tr>
+            <tr>
+                <td><strong>Number of Animal Species:</strong></td>
+                <td>@Model.NumberOfAnimalSpecies.ToString("N0")</td>
+            </tr>
+        </table>
+    </div>
+    <div class="forecastContainer">
+        <h3>Five Day Forecast</h3>
+        @foreach (Weather weather in Model.Weather)
+            {
+            <div class="weatherLoopDiv">
+                <img src="~/Content/img/weather/@(weather.Forecast + ".png")" class="weatherImage" />
+
+
+                <p class="highTemp">High @weather.High °F</p>
+                <p class="lowTemp">Low @weather.Low °F</p>
+
+
+                @*<p class="highTemp">@weather.High °C</p>
+                <p class="lowTemp">@weather.Low °C</p>*@
+
+                <p class="weatherRecommendation">@weather.Recommendation</p>
+            </div>
+        }
+
+        <button class="tempButton">Celsius</button>
+
+        @*<button class="tempButton">Fahrenheit</button>*@
+
+    </div>
+</div>
