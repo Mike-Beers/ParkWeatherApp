@@ -12,13 +12,14 @@
         <p class="inspirationalQuote"><em>@Model.InspirationalQuote</em></p>
         <p class="inspirationalQuoteSource"><em>- @Model.InspirationalQuoteSource</em></p>
     </div>
+    <hr />
     <div class="descriptionDiv">
         <p>@Model.ParkDescription</p>
     </div>
     <div class="tablesDetail">
         <table class="parkInfoTable">
             <tr>
-                <th>Park Info</th>
+                <th class="parkInfoTableHeader">Park Info</th>
             </tr>
             <tr>
                 <td><strong>Size:</strong></td>
@@ -36,11 +37,15 @@
                 <td><strong>Park Code:</strong></td>
                 <td>@Model.ParkCode</td>
             </tr>
+            <tr>
+                <td><strong>Climate:</strong> </td>
+                <td>@Model.Climate</td>
+            </tr>
         </table>
 
         <table class="campingInfoTable">
             <tr>
-                <th>Camping Info</th>
+                <th class="parkInfoTableHeader">Camping Info</th>
             </tr>
             <tr>
                 <td><strong>Number of Campsites:</strong></td>
@@ -55,10 +60,6 @@
                 <td>@Model.EntryFee.ToString("C")</td>
             </tr>
             <tr>
-                <td><strong>Climate:</strong> </td>
-                <td>@Model.Climate</td>
-            </tr>
-            <tr>
                 <td><strong>Miles of Trail:</strong></td>
                 <td>@Model.MilesOfTrail.ToString("N0")</td>
             </tr>
@@ -68,8 +69,9 @@
             </tr>
         </table>
     </div>
+    <hr />
     <div class="forecastContainer">
-        <h3>Five Day Forecast</h3>
+        <h3 class="forecastHeading">Five Day Forecast</h3>
         @foreach (Weather weather in Model.Weather)
             {
             <div class="weatherLoopDiv">
@@ -81,13 +83,13 @@
 
 
                 @*<p class="highTemp">@weather.High °C</p>
-                <p class="lowTemp">@weather.Low °C</p>*@
+                    <p class="lowTemp">@weather.Low °C</p>*@
 
                 <p class="weatherRecommendation">@weather.Recommendation</p>
             </div>
         }
-
         <button class="tempButton">Celsius</button>
+
 
         @*<button class="tempButton">Fahrenheit</button>*@
 
