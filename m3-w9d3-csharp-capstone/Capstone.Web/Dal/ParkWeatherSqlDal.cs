@@ -74,7 +74,7 @@ namespace Capstone.Web.Dal
                     recommendation += "Pack your snowshoes! ";
                     break;
                 case "rain":
-                    recommendation += "Pack rain gear and wear waterprof shoes. ";
+                    recommendation += "Pack rain gear and wear waterproof shoes. ";
                     break;
                 case "thunderstorms":
                     recommendation += "Seek shelter and avoid hiking on exposed ridges. ";

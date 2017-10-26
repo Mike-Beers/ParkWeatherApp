@@ -56,8 +56,8 @@ nav {
     min-height: 700px;
 }
 
-    .parkHome #parkImg {
-        width: 200px;
+.parkHome #parkImg {
+        max-width: 200px;
         height: auto;
         border-width: 10px;
         text-align: center;
@@ -75,6 +75,79 @@ nav {
     margin: 20px 0px;
 }
 
-    .form-input-field label {
-        display: block;
-    }
+.form-input-field label {
+    display: block;
+}
+
+
+/*Detail Styles*/
+
+.detailContainer {
+        text-align: center;
+}
+
+.parkInfoTable {
+    display: inline-block;
+    float: left;
+    border: 2px solid;
+    padding: 10px;
+}
+
+.campingInfoTable {
+    display: inline-block;
+    border: 2px solid;
+    padding: 10px;
+}
+
+.forecastContainer {
+
+}
+.headingDetail{
+    position: relative;
+    left: 40px;
+    margin: 30px;
+}
+div.forecastContainer > div:nth-of-type(odd) {
+    background-color: lightgray;
+}
+
+.weatherLoopDiv {
+    display: inline-block;
+    font-size: smaller;
+    height: 300px;
+    width: 15%;
+    border: 1px solid;
+    vertical-align:top;
+}
+.forecastContainer{
+}
+.weatherRecommendation{
+
+}
+.weatherImage {
+    height: 130px;
+    width: auto;
+}
+/*.highTemp{
+    display: inline;
+}*/
+.lowTemp {
+    display: inline;
+}
+
+.tempButton {
+    display: block;
+    margin: 5px;
+}
+.forecastHeading{
+    margin : 30px;
+}
+.tablesDetail{
+    position: relative;
+    left: 100px;
+    margin: 50px;
+}
+.parkInfoTableHeader{
+    position: relative;
+    left: 50px;
+}

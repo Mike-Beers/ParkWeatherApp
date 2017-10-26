@@ -12,13 +12,14 @@
         <p class="inspirationalQuote"><em>@Model.InspirationalQuote</em></p>
         <p class="inspirationalQuoteSource"><em>- @Model.InspirationalQuoteSource</em></p>
     </div>
+    <hr />
     <div class="descriptionDiv">
         <p>@Model.ParkDescription</p>
     </div>
     <div class="tablesDetail">
         <table class="parkInfoTable">
             <tr>
-                <th>Park Info</th>
+                <th class="parkInfoTableHeader">Park Info</th>
             </tr>
             <tr>
                 <td><strong>Size:</strong></td>
@@ -36,11 +37,15 @@
                 <td><strong>Park Code:</strong></td>
                 <td>@Model.ParkCode</td>
             </tr>
+            <tr>
+                <td><strong>Climate:</strong> </td>
+                <td>@Model.Climate</td>
+            </tr>
         </table>
 
         <table class="campingInfoTable">
             <tr>
-                <th>Camping Info</th>
+                <th class="parkInfoTableHeader">Camping Info</th>
             </tr>
             <tr>
                 <td><strong>Number of Campsites:</strong></td>
@@ -55,10 +60,6 @@
                 <td>@Model.EntryFee.ToString("C")</td>
             </tr>
             <tr>
-                <td><strong>Climate:</strong> </td>
-                <td>@Model.Climate</td>
-            </tr>
-            <tr>
                 <td><strong>Miles of Trail:</strong></td>
                 <td>@Model.MilesOfTrail.ToString("N0")</td>
             </tr>
@@ -68,28 +69,47 @@
             </tr>
         </table>
     </div>
+    <hr />
+    <h3 class="forecastHeading">Five Day Forecast</h3>
     <div class="forecastContainer">
-        <h3>Five Day Forecast</h3>
         @foreach (Weather weather in Model.Weather)
             {
             <div class="weatherLoopDiv">
                 <img src="~/Content/img/weather/@(weather.Forecast + ".png")" class="weatherImage" />
 
-
-                <p class="highTemp">High @weather.High °F</p>
-                <p class="lowTemp">Low @weather.Low °F</p>
-
-
-                @*<p class="highTemp">@weather.High °C</p>
-                <p class="lowTemp">@weather.Low °C</p>*@
-
+                @if (Convert.ToBoolean(Session["Fahrenheit"]))
+                {
+                    <p class="highTemp">High @weather.High °F</p>
+                    <p class="lowTemp">Low @weather.Low °F</p>
+                }
+                else
+                {
+                    <p class="highTemp"> @weather.ToCelsius(weather.High) °C</p>
+                    <p class="lowTemp">@weather.ToCelsius(weather.Low) °C</p>
+                }
                 <p class="weatherRecommendation">@weather.Recommendation</p>
             </div>
         }
 
-        <button class="tempButton">Celsius</button>
+        @using (Html.BeginForm("Detail", "Home", FormMethod.Post))
+        {
+            <div>
 
-        @*<button class="tempButton">Fahrenheit</button>*@
+            @Html.HiddenFor(m => m.ParkCode);
+
+            @if (Convert.ToBoolean(Session["Fahrenheit"]))
+            {
+                <button class="tempButton">Celsius</button>
+
+            }
+            else
+            {
+                <button class="tempButton">Fahrenheit</button>
+            }
+            </div>
+        }
+
+
 
     </div>
 </div>
