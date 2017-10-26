@@ -11,19 +11,25 @@
 {
     <div class="form-input-field">
         @Html.Label("ParkCode", "Favorite National Park")
-        @Html.DropDownListFor(m => m.ParkCode, ViewBag.Parks as List<SelectListItem>)
+        @{List<SelectListItem> test = ViewBag.ParkCode;
+        }
+        @Html.DropDownListFor(m => m.ParkCode, ViewBag.ParkCode as SelectList)
+        @Html.ValidationMessageFor(m => m.ParkCode)
     </div>
     <div class="form-input-field">
         @Html.Label("EmailAddress", "Email")
         @Html.TextBoxFor(m => m.EmailAddress)
+        @Html.ValidationMessageFor(m => m.EmailAddress)
     </div>
     <div class="form-input-field">
         @Html.Label("State", "State of Residence")
         @Html.DropDownListFor(m => m.State, Survey.states)
+        @Html.ValidationMessageFor(m => m.State)
     </div>
     <div class="form-input-field">
         @Html.Label("ActivityLevel", "Activity Level")
         @Html.DropDownListFor(m => m.ActivityLevel, Survey.activityLevelList)
+        @Html.ValidationMessageFor(m => m.ActivityLevel)
     </div>
     <button>Submit Survey</button>
 }

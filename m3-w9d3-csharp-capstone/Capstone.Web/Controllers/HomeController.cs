@@ -48,7 +48,7 @@ namespace Capstone.Web.Controllers
                 parks.Add(s);
             }
 
-            ViewBag.Parks = parks;
+            ViewBag.ParkCode = parks;
 
             return View();
         }
@@ -57,8 +57,18 @@ namespace Capstone.Web.Controllers
         [HttpPost]
         public ActionResult Survey(Survey survey)
         {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Survey");
+            }
+            else
+            {
+                surveyDal.InsertSurvey(survey);
+            }
+
             return RedirectToAction("SurveyConfirmation");
         }
+
         public ActionResult SurveyConfirmation()
         {
             Park model = parkDal.GetParkByCode(surveyDal.ReturnMostPopularPark());
