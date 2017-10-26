@@ -13,6 +13,7 @@ namespace Capstone.Web.Models
         public int High { get; set; }
         public string Forecast { get; set; }
         public string Recommendation { get; set; }
+        public bool Fahrenheit { get; set; }
 
         public int ToCelsius(int temp)
         {

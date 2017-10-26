@@ -130,7 +130,11 @@
     <Content Include="Content\img\weather\snow.png" />
     <Content Include="Content\img\weather\sunny.png" />
     <Content Include="Content\img\weather\thunderstorms.png" />
+<<<<<<< HEAD
+    <Content Include="Content\styles.css" />
+=======
     <Content Include="Content\parkStyle.css" />
+>>>>>>> cc07e8265ef67b1d7144fc7d0bb3a0d5b48cf995
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>

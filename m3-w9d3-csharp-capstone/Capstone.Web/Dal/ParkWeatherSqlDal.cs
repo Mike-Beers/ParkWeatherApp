@@ -12,7 +12,7 @@ namespace Capstone.Web.Dal
     {
 
         private readonly string connectionString;
-        private const string getWeatherByCodeSql = "SELECT * FROM weather WHERE parkCode = '@parkCode'";
+        private const string getWeatherByCodeSql = "SELECT * FROM weather WHERE parkCode = @parkCode";
 
 
         public ParkWeatherSqlDal(string connectionString)
@@ -52,7 +52,14 @@ namespace Capstone.Web.Dal
             weather.FiveDayForcastValue = Convert.ToInt32(results["fiveDayForecastValue"]);
             weather.Low = Convert.ToInt32(results["low"]);
             weather.High = Convert.ToInt32(results["high"]);
-            weather.Forecast = Convert.ToString(results["forecast"]);
+            if (results["forecast"].ToString().Contains(' '))
+            {
+                weather.Forecast = "partlycloudy";
+            }
+            else
+            {
+                weather.Forecast = Convert.ToString(results["forecast"]);
+            }
             weather.Recommendation = CreateRecommendation(weather.Low, weather.High, weather.Forecast);
             return weather;
         }
@@ -91,8 +98,8 @@ namespace Capstone.Web.Dal
 
             return recommendation;
         }
-        
-        
+
+
         //public int TestMethod()
         //{
         //    return 0;
