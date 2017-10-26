@@ -36,15 +36,14 @@ nav {
 
 /* Home Page */
 /*vertical-align:top;max-width:30%; text-align:center*/
-.parkHomeBanner{
+.parkHomeBanner {
     text-align: center;
     color: darkgreen;
-    
-    position:relative;
+    position: relative;
 }
 
 
-.parkHome{
+.parkHome {
     margin: 10px;
     border-radius: 5px;
     border: 2px solid black;
@@ -52,27 +51,30 @@ nav {
     padding: 10px;
     display: inline-block;
     vertical-align: top;
-    max-width: 30%;
+    width: 30%;
     text-align: center;
+    min-height: 700px;
 }
-.parkHome #parkImg {
+
+    .parkHome #parkImg {
         width: 200px;
         height: auto;
         border-width: 10px;
         text-align: center;
     }
-.parkHome a{
-    text-decoration: none;
-    color: darkgreen;
-    font-weight: bolder;
-    font-size: x-large;
-}
+
+    .parkHome a {
+        text-decoration: none;
+        color: darkgreen;
+        font-weight: bolder;
+        font-size: x-large;
+    }
 
 /* Survey Form */
 .form-input-field {
     margin: 20px 0px;
 }
 
-.form-input-field label {
-    display: block;
-}
+    .form-input-field label {
+        display: block;
+    }
