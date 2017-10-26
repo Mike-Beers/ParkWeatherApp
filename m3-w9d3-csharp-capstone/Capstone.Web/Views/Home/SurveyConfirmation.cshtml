@@ -7,10 +7,9 @@
 <h2>Thank You</h2>
 <p>Thanks for participating in our survey!</p>
 <p>Check out the park users voted highest on</p>
-@using (Html.BeginForm("Detail", "Home"))
-{
-    <button>Here</button>
-}
+
+    <button><a href="@Url.Action("Detail", "Home", new {id = Model.ParkCode})">Here</a></button>
+
 
 
 

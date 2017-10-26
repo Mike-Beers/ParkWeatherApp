@@ -32,9 +32,30 @@ namespace Capstone.Web.Controllers
         }
         public ActionResult Detail(string id)
         {
+            if (Session["Fahrenheit"] == null)
+            {
+                Session["Fahrenheit"] = true;
+            }
             Park model = parkDal.GetParkByCode(id);
             model.Weather = weatherDal.GetWeatherByCode(id);
             return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Detail(Park park)
+        {
+            if (Convert.ToBoolean(Session["Fahrenheit"]))
+            {
+                Session["Fahrenheit"] = false;
+            }
+            else
+            {
+                Session["Fahrenheit"] = true;
+            }
+            Park model = parkDal.GetParkByCode(park.ParkCode);
+            model.Weather = weatherDal.GetWeatherByCode(park.ParkCode);
+            string id = park.ParkCode;
+            return RedirectToAction("Detail", "Home", id);
         }
 
         // GET: Home/Survey
