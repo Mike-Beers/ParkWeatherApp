@@ -39,13 +39,13 @@ namespace Capstone.Web.Dal
                         p.State = Convert.ToString(results["state"]);
                         p.Acreage = Convert.ToInt32(results["acreage"]);
                         p.ElevationInFeet = Convert.ToInt32(results["elevationInFeet"]);
-                        p.MilesOfTrail = Convert.ToInt32(results["milesOfTrails"]);
+                        p.MilesOfTrail = Convert.ToInt32(results["milesOfTrail"]);
                         p.NumberOfCampsites = Convert.ToInt32(results["numberOfCampsites"]);
                         p.Climate = Convert.ToString(results["climate"]);
                         p.YearFounded = Convert.ToInt32(results["yearFounded"]);
                         p.AnnualVisitorCount = Convert.ToInt32(results["annualVisitorCount"]);
                         p.InspirationalQuote = Convert.ToString(results["inspirationalQuote"]);
-                        p.InspirationalQuoteSource = Convert.ToString(results["inspirationQuoteSource"]);
+                        p.InspirationalQuoteSource = Convert.ToString(results["inspirationalQuoteSource"]);
                         p.ParkDescription = Convert.ToString(results["parkDescription"]);
                         p.EntryFee = Convert.ToInt32(results["entryFee"]);
                         p.NumberOfAnimalSpecies = Convert.ToInt32(results["numberOfAnimalSpecies"]);

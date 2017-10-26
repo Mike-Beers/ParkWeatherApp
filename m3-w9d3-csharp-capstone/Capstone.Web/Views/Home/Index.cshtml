@@ -1,9 +1,23 @@
-﻿@model Capstone.Web.Models.Park
+﻿@using Capstone.Web.Models
+@model List<Park>
 
 @{
     ViewBag.Title = "Home";
 }
 
-<h2>Home</h2>
+<h2 style="text-align:center">Home</h2>
+<section style="text-align:center">
+    @{
 
+        foreach (Park p in Model)
+        {
+            <Table class="park" style="margin:10px; border-radius:5px; border:2px solid black; background-color:lightgray;padding: 10px;display:inline-block;vertical-align:top;max-width:30%; text-align:center">
+                <tr><th style="padding:10px"><a href="@Url.Action("Detail","Home", new { id = p.ParkCode })">@p.ParkName</a></th></tr>
+                <tr><td><a href="@Url.Action("Detail","Home", new { id = p.ParkCode })"><img style="width:200px;height:auto;border-width:10px;text-align:center" src="~/Content/img/parks/@(p.ParkCode.ToLower()+".jpg")"/></a></td></tr>
+                <tr><td><h3>@p.State</h3></td></tr>
+                <tr><td style="width:200px; text-align:center">@p.ParkDescription</td></tr>
+            </Table>
+        }
 
+    }
+</section>

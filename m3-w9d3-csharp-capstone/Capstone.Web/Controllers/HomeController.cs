@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Capstone.Web.Models;
+using System.Configuration;
 
 namespace Capstone.Web.Controllers
 {
@@ -14,6 +15,7 @@ namespace Capstone.Web.Controllers
         private readonly IParkWeatherDal weatherDal;
         private readonly ISurveyDal surveyDal;
         private readonly IParkDal parkDal;
+
 
         public HomeController(IParkWeatherDal weatherDal, ISurveyDal surveyDal, IParkDal parkDal)
         {
@@ -25,8 +27,8 @@ namespace Capstone.Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
-
+            List<Park> parks = parkDal.GetAllParks();
+            return View(parks);
         }
         public ActionResult Detail(string id)
         {
@@ -34,10 +36,24 @@ namespace Capstone.Web.Controllers
             model.Weather = weatherDal.GetWeatherByCode(id);
             return View(model);
         }
+
+        // GET: Home/Survey
         public ActionResult Survey()
         {
+            List<SelectListItem> parks = new List<SelectListItem>();
+
+            foreach(Park p in parkDal.GetAllParks())
+            {
+                SelectListItem s = new SelectListItem() { Text = p.ParkName, Value = p.ParkCode };
+                parks.Add(s);
+            }
+
+            ViewBag.Parks = parks;
+
             return View();
         }
+
+        // POST: Home/Survey
         [HttpPost]
         public ActionResult Survey(Survey survey)
         {
