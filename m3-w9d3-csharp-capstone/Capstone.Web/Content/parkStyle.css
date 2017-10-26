@@ -56,7 +56,7 @@ nav {
     text-align: center;
 }
 .parkHome #parkImg {
-        width: 200px;
+        max-width: 200px;
         height: auto;
         border-width: 10px;
         text-align: center;
