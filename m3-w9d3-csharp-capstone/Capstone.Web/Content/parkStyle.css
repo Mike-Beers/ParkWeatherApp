@@ -34,16 +34,6 @@ nav {
             color: white;
         }
 
-footer {
-    position: absolute;
-    bottom: 0px;
-    height: 50px;
-    width: 80%;
-    padding: 0 10%;
-    background-color: green;
-    margin-top: 20px;
-}
-
 /* Home Page */
 parks {
     text-align: center;
@@ -64,4 +54,14 @@ parks {
     vertical-align: top;
     width: 80%;
     margin: 0 auto;
+}
+
+/* Survey Form */
+
+.form-input-field {
+    margin: 20px 0px;
+}
+
+.form-input-field label {
+    display: block;
 }

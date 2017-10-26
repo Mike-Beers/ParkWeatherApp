@@ -21,7 +21,7 @@ namespace Capstone.Web.Controllers
         {
             this.weatherDal = weatherDal;
             this.surveyDal = surveyDal;
-            this.parkDal = new ParkSqlDal(ConfigurationManager.ConnectionStrings["ParkWeatherDb"].ConnectionString);
+            this.parkDal = parkDal;
         }
 
         // GET: Home
@@ -38,6 +38,16 @@ namespace Capstone.Web.Controllers
         // GET: Home/Survey
         public ActionResult Survey()
         {
+            List<SelectListItem> parks = new List<SelectListItem>();
+
+            foreach(Park p in parkDal.GetAllParks())
+            {
+                SelectListItem s = new SelectListItem() { Text = p.ParkName, Value = p.ParkCode };
+                parks.Add(s);
+            }
+
+            ViewBag.Parks = parks;
+
             return View();
         }
 

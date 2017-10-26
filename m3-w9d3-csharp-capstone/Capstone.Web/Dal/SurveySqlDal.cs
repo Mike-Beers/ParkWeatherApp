@@ -14,6 +14,10 @@ namespace Capstone.Web.Dal
         private string ReturnMostPopularPark_SQL = "SELECT TOP 1 parkCode, COUNT(parkCode) FROM survey_result GROUP BY parkCode ORDER BY COUNT(parkCode) DESC;";
         // private string SelectAllByEmail_SQL = "";
 
+        public SurveySqlDal(string connectionString)
+        {
+            this.connectionString = connectionString;
+        }
 
         // Inserts a completed survey into the survey_results table.
         public bool InsertSurvey(Survey submittedSurvey)
