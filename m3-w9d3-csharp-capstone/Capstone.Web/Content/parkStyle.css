@@ -1,22 +1,67 @@
-﻿body {
-}
-parks{
-    text-align:center;
+﻿/* CSS Reset */
+html, body, div, h1, h2, h3, h4, h5 {
+    padding: 0px;
+    margin: 0px;
 }
 
-.parks p{
+/* _Layout Style */
+.main-content {
+    width: 70%;
+    margin: auto;
+}
+
+nav {
+    height: 100px;
+    width: 80%;
+    padding: 0 10%;
+    background-color: green;
+    margin-bottom: 20px;
+}
+
+    nav .logo {
+        height: 100%;
+        float: left;
+    }
+
+    nav .nav-link {
+        float: right;
+        padding: 20px;
+        height: 100%;
+    }
+
+        nav .nav-link a {
+            text-decoration: none;
+            color: white;
+        }
+
+/* Home Page */
+parks {
+    text-align: center;
+}
+
+.parks p {
     width: 80%;
     margin: 25px;
     text-align: left;
 }
-.parks img { 
+
+.parks img {
     width: 250px;
     height: auto;
-
 }
+
 .park {
     vertical-align: top;
     width: 80%;
     margin: 0 auto;
 }
 
+/* Survey Form */
+
+.form-input-field {
+    margin: 20px 0px;
+}
+
+.form-input-field label {
+    display: block;
+}
