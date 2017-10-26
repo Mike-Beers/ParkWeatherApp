@@ -68,7 +68,6 @@ namespace Capstone.Web.Controllers
                 SelectListItem s = new SelectListItem() { Text = p.ParkName, Value = p.ParkCode };
                 parks.Add(s);
             }
-
             ViewBag.ParkCode = parks;
 
             return View();
@@ -80,7 +79,17 @@ namespace Capstone.Web.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return RedirectToAction("Survey");
+                List<SelectListItem> parks = new List<SelectListItem>();
+
+                foreach (Park p in parkDal.GetAllParks())
+                {
+                    SelectListItem s = new SelectListItem() { Text = p.ParkName, Value = p.ParkCode };
+                    parks.Add(s);
+                }
+
+                ViewBag.ParkCode = parks;
+
+                return View("Survey", survey);
             }
             else
             {
