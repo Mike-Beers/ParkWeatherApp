@@ -40,6 +40,9 @@ nav {
     text-align: center;
     color: darkgreen;
     position: relative;
+    border: 2px solid;
+    border-radius: 5px;
+    background-color: whitesmoke;
 }
 
 
@@ -84,6 +87,7 @@ nav {
 
 .detailContainer {
         text-align: center;
+        background-color: white;
 }
 
 .parkInfoTable {

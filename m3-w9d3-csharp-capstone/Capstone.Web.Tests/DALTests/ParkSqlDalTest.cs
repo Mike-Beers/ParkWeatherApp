@@ -47,7 +47,7 @@ namespace Capstone.Web.Tests.DALTests
         }
 
         [TestMethod]
-        public void SeeIfGetCampgroundByCodeWorks()
+        public void GetCampgroundByCodeTest()
         {
             Park p = new Park();
             ParkSqlDal parkDal = new ParkSqlDal(connectionString);
@@ -56,7 +56,7 @@ namespace Capstone.Web.Tests.DALTests
         }
 
         [TestMethod]
-        public void SeeIfGetAllParksWorks()
+        public void GetAllParksTest()
         {
             List<Park> p = new List<Park>();
             ParkSqlDal parkDal = new ParkSqlDal(connectionString);

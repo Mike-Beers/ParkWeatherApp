@@ -4,22 +4,23 @@
 @{
     ViewBag.Title = "Home";
 }
+<body background="~/Content/img/parks/badlands_harlanhumphrey_ste.jpg">
+    <h2 class="parkHomeBanner">Welcome to National Park Geek!</h2>
 
-<h2 class="parkHomeBanner">Welcome to National Park Geek!</h2>
+    <section style="text-align:center">
+        @{
 
-<section style="text-align:center">
-    @{
+            foreach (Park p in Model)
+            {
+                <Table class="parkHome">
+                    <tr><th style="padding:10px"><a href="@Url.Action("Detail","Home", new { id = p.ParkCode })">@p.ParkName</a></th></tr>
+                    <tr><td><a href="@Url.Action("Detail","Home", new { id = p.ParkCode })"><img id="parkImg" src="~/Content/img/parks/@(p.ParkCode.ToLower()+".jpg")" /></a></td></tr>
+                    <tr><td><h3>@p.State</h3></td></tr>
+                    <tr><td style="width:200px; text-align:center">@p.ParkDescription</td></tr>
+                </Table>
+            }
 
-        foreach (Park p in Model)
-        {
-            <Table class="parkHome">
-                <tr><th style="padding:10px"><a href="@Url.Action("Detail","Home", new { id = p.ParkCode })">@p.ParkName</a></th></tr>
-                <tr><td><a href="@Url.Action("Detail","Home", new { id = p.ParkCode })"><img id="parkImg" src="~/Content/img/parks/@(p.ParkCode.ToLower()+".jpg")" /></a></td></tr>
-                <tr><td><h3>@p.State</h3></td></tr>
-                <tr><td style="width:200px; text-align:center">@p.ParkDescription</td></tr>
-            </Table>
         }
+    </section>
 
-    }
-</section>
-
+</body>
