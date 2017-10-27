@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Capstone.Web.Tests
+namespace Capstone.Web.Tests.PageObjects
 {
     public abstract class BasePage
     {

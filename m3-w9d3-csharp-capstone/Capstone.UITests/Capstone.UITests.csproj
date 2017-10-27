@@ -92,7 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
-    <Compile Include="Selenium Tests\HomeControllerTests.cs" />
+    <Compile Include="Selenium Tests\HomeControllerSeleniumTests.cs" />
     <Compile Include="PageObjects\BasePage.cs" />
     <Compile Include="PageObjects\DetailPage.cs" />
     <Compile Include="PageObjects\IndexPage.cs" />

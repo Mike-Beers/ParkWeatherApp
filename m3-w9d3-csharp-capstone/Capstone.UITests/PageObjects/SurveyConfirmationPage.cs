@@ -12,12 +12,20 @@ namespace Capstone.Web.Tests.PageObjects
     public class SurveyConfirmationPage : BasePage
     {
         public SurveyConfirmationPage(IWebDriver driver)
-            : base(driver, "/Home/SurveyConfirmationPage")
+            : base(driver, "/Home/SurveyConfirmation")
         {
             PageFactory.InitElements(driver, this);
         }
 
         [FindsBy(How = How.CssSelector, Using = "button")]
         public IWebElement CalculateButton { get; set; }
+
+        public DetailPage SurveyRedirect()
+        {
+            CalculateButton.Click();
+            return new DetailPage(driver);
+            
+        }
+
     }
 }

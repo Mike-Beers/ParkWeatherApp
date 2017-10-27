@@ -94,6 +94,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\HomeControllerTests.cs" />
     <Compile Include="DALTests\ParkSqlDalTest.cs" />
     <Compile Include="DALTests\ParkWeatherSqlDalTests.cs" />
     <Compile Include="DALTests\SurveySqlDalTest.cs" />

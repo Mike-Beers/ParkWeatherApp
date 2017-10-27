@@ -35,7 +35,7 @@ namespace Capstone.Web.Tests.PageObjects
         public SurveyConfirmationPage FillOutForm(string parkCode, string emailAddress, string state, string activityLevel)
         {
             SelectElement parkCodeDropDown = new SelectElement(ParkCode);
-            parkCodeDropDown.SelectByValue(parkCode);
+            parkCodeDropDown.SelectByText(parkCode);
 
             EmailAddress.SendKeys(emailAddress);
 
@@ -43,7 +43,7 @@ namespace Capstone.Web.Tests.PageObjects
             stateDropDown.SelectByText(state);
 
             SelectElement activityLevelDropDown = new SelectElement(ActivityLevel);
-            activityLevelDropDown.SelectByValue(activityLevel);
+            activityLevelDropDown.SelectByText(activityLevel);
 
             SubmitButton.Click();
 
