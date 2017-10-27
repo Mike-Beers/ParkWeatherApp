@@ -95,7 +95,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DALTests\ParkSqlDalTest.cs" />
+    <Compile Include="DALTests\ParkWeatherSqlDalTests.cs" />
+    <Compile Include="DALTests\SurveySqlDalTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ModelTests\WeatherTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
