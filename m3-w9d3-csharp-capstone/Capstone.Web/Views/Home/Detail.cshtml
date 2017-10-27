@@ -71,6 +71,20 @@
     </div>
     <hr />
     <h3 class="forecastHeading">Five Day Forecast</h3>
+    @using (Html.BeginForm("Detail", "Home", FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.ParkCode)
+
+        if (Convert.ToBoolean(Session["Fahrenheit"]))
+        {
+            <button class="tempButton">Celsius</button>
+
+        }
+        else
+        {
+            <button class="tempButton">Fahrenheit</button>
+        }
+    }
     <div class="forecastContainer">
         @foreach (Weather weather in Model.Weather)
             {
@@ -91,23 +105,7 @@
             </div>
         }
 
-        @using (Html.BeginForm("Detail", "Home", FormMethod.Post))
-        {
-            <div>
 
-            @Html.HiddenFor(m => m.ParkCode);
-
-            @if (Convert.ToBoolean(Session["Fahrenheit"]))
-            {
-                <button class="tempButton">Celsius</button>
-
-            }
-            else
-            {
-                <button class="tempButton">Fahrenheit</button>
-            }
-            </div>
-        }
 
 
 
